@@ -1,0 +1,15 @@
+# dependencies
+node_modules
+
+# generate
+dist
+
+# editor
+.idea
+.vscode
+
+package-lock.json
+.DS_Store
+.history
+*.log
+*.lock

@@ -1,0 +1,47 @@
+{
+  "name": "webpack5-template",
+  "version": "1.0.0",
+  "description": "Webpack5のテンプレートです。",
+  "main": "webpack.common.js",
+  "scripts": {
+    "dev": "npx webpack --config ./webpack.dev.js",
+    "start:dev": "npx webpack serve --config ./webpack.dev.js",
+    "prd": "npx webpack --config ./webpack.prod.js",
+    "fix": "eslint --cache --fix ./src/ts/ && prettier --write ./src/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.14",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "autoprefixer": "^10.4.7",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.0",
+    "sass-loader": "^13.0.2",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3",
+    "webpack-watched-glob-entries-plugin": "^2.2.4"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 4"
+  ]
+}

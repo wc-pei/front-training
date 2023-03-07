@@ -1,0 +1,105 @@
+@charset 'UTF-8';
+
+$breakpoint: (
+    sp: 'screen and (max-width:767px)',
+    pc: 'screen and (min-width: 768px)'
+);
+
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+        @content;
+    }
+}
+
+body {
+    font-size: 14px;
+
+    header {
+        @include mq(pc) {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        .top-logo-area {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .top-main-visual {
+            .top-left-column {
+                margin-left: 160px;
+                z-index: 999;
+
+                .top-left-second-elem {
+                    margin-top: 48px;
+                }
+            }
+
+            .top-right-column {
+                margin-left: -160px;
+            }
+        }
+    }
+
+    main {
+        &.container {
+            @include mq(pc) {
+                width: 710px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    footer {
+        @include mq(pc) {
+            width: 1280px;
+            margin: 0 auto;
+        }
+    }
+
+    p {
+        font-size: 14px;
+
+        .font-bold {
+            font-weight: bold;
+        }
+    }
+
+    /******* font *******/
+    .align-right {
+        text-align: right;
+    }
+
+    .font-bold {
+        font-weight: bold;
+    }
+
+    /******* margin *******/
+
+
+    /******* flex *******/
+    .flex-2column-a {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+}
+
+h1 {
+    @include mq(pc) {
+        font-size: 20px;
+    }
+
+    @include mq(sp) {
+        font-size: 50px;
+    }
+}
+
+// @include m.mq(pc) {
+// }
+
+// @include m.mq(sp) {
+// }
+
