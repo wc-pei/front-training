@@ -20,31 +20,34 @@
                 <p class="font-bold">保険のプロがあなたに1番安くてぴったりの火災保険をご提案!</p>
             </section>
 
-            <section class="top-main-visual flex-2column-space-between">
-                <div class="top-left-column">
-                    <div class="top-left-first-elem">
-                        <picture>
-                            <img src="./assets/images/main_visual_title.png" alt="main_visual_title">
-                            <!-- <source srcset="候補2の画像URL" 属性 /> -->
-                        </picture>
-                    </div>
-                    <div class="top-left-second-elem">
-                        <picture>
-                            <img src="./assets/images/main_visual_describe.png" alt="main_visual_describe">
-                        </picture>
-                    </div>
-                </div>
-                <div class="top-right-column">
-                    <picture>
-                        <img src="./assets/images/main_visual_img.png" alt="main_visual_img">
-                    </picture>
-                </div>
-            </section>
         </header>
         <!----- /header ----->
 
         <!----- main ----->
         <main class="container">
+            <section class="top-main-visual">
+                <div class="top-main-visual-wrap flex-2column-space-between">
+                    <div class="top-left-column">
+                        <div class="top-left-first-elem">
+                            <picture>
+                                <img src="./assets/images/main_visual_title.png" alt="main_visual_title">
+                                <!-- <source srcset="候補2の画像URL" 属性 /> -->
+                            </picture>
+                        </div>
+                        <div class="top-left-second-elem">
+                            <picture>
+                                <img src="./assets/images/main_visual_describe.png" alt="main_visual_describe">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="top-right-column">
+                        <picture>
+                            <img src="./assets/images/main_visual_img.png" alt="main_visual_img">
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
             <section class="contents-free-entry">
                 <div class="contents-wrap">
                     <p class="contents-subtitle"><span>かんたん2分で申込み!</span></p>
@@ -116,47 +119,63 @@
                         <h2>火災保険についてご存じですか?</h2>
                     </div>
 
-                    <div class="align-left">
+                    <div class="contents-heading-h3 align-left">
                         <h3><span class="heading-border-line-orange">火災保険の補償内容は多岐にわたります。</span></h3>
                         <p>火災保険で補償されるのは、失火やもらい火、放火による損害だけではありません。図のような損害に対しても、補償が可能です。</p>
                     </div>
 
-                    <div class="flex-2column-space-around flex-insurance-thumbnail-type">
+                    <div class="flex-2column-space-between flex-insurance-thumbnail-type">
                         <div class="contents-insurance-thumbnail-type">
                             <picture>
                                 <img src="./assets/images/icon/icon-wind_disaster.png" alt="wind disaster">
                             </picture>
+                            <p>風災</p>
                         </div>
                         <div class="contents-insurance-thumbnail-type">
                             <picture>
                                 <img src="./assets/images/icon/icon-flood_disaster.png" alt="flood disaster">
                             </picture>
+                            <p>水災</p>
                         </div>
                         <div class="contents-insurance-thumbnail-type">
                             <picture>
                                 <img src="./assets/images/icon/icon-snow_disaster.png" alt="snow disaster">
                             </picture>
+                            <p>雪災</p>
                         </div>
                         <div class="contents-insurance-thumbnail-type">
                             <picture>
                                 <img src="./assets/images/icon/icon-lightning_strike.png" alt="lighning strike">
                             </picture>
+                            <p>落雷</p>
                         </div>
                     </div>
 
-                    <h3>保険会社によって、補償内容や保険料は異なります。</h3>
-                    <p>火災保険の保険料は、図のように構成されています。付加保険料は、保険会社が独自に算定しています。</p>
+                    <div class="contents-heading align-left">
+                        <h3><span class="heading-border-line-orange">保険会社によって、補償内容や保険料は異なります。</span></h3>
+                        <p>火災保険の保険料は、図のように構成されています。付加保険料は、保険会社が独自に算定しています。</p>
+                    </div>
 
-                    <div>
-                        <p><span>保険料</span></p>
-                        <div>
-                            <div>
-                                <p>純保険料<small>（純保険料率に基づく）</small></p>
-                                <p>保険会社が支払う保険金に充てられる保険料</p>
+                    <div class="contents-insurance-compare">
+                        <div class="contents-heading-bg">
+                            <p class="contents-heading-p"><span>保険料</span></p>
+                        </div>
+                        <div class="flex-2column contents-insurance">
+                            <div class="contents-insurance-compare-box">
+                                <div class="contents-insurance-compare-left-box contents-theme-bg-color-primary">
+                                    <p>純保険料<small>（純保険料率に基づく）</small></p>
+                                </div>
+                                <div>
+                                    <p>保険会社が支払う保険金に充てられる保険料</p>
+                                </div>
                             </div>
-                            <div>
-                                <p>付加保険料<small>（付加険料率に基づく）</small></p>
-                                <p>保険会社の事業運営資金に充てられる保険料</p>
+                            <div class="contents-insurance-compare-box">
+                                <div class="contents-insurance-compare-right-box contents-theme-bg-color-secondary">
+                                    <p>付加保険料<small>（付加険料率に基づく）</small></p>
+                                </div>
+                                <div>
+                                    <p>保険会社の事業運営資金に充てられる保険料</p>
+                                </div>
                             </div>
                         </div>
                     </div>

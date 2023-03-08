@@ -27,31 +27,38 @@ body {
             width: 960px;
             margin: 0 auto;
         }
-
-        .top-main-visual {
-            background-color: #FFFFEC;
-
-            @include mq(pc) {
-                max-height: 396px;
-            }
-
-            .top-left-column {
-                margin-left: 160px;
-                z-index: 999;
-
-                .top-left-second-elem {
-                    margin-top: 48px;
-                }
-            }
-
-            .top-right-column {
-                margin-left: -160px;
-            }
-        }
     }
 
     main {
         &.container {
+            .top-main-visual {
+                background-color: #FFFFEC;
+
+                @include mq(pc) {
+                    max-height: 396px;
+                }
+
+                .top-main-visual-wrap {
+                    @include mq(pc) {
+                        width: 1280px;
+                        margin: 0 auto;
+                    }
+
+                    .top-left-column {
+                        margin-left: 160px;
+                        z-index: 999;
+
+                        .top-left-second-elem {
+                            margin-top: 48px;
+                        }
+                    }
+
+                    .top-right-column {
+                        margin-left: -160px;
+                    }
+                }
+            }
+
             @include mq(pc) {
                 width: 100%;
                 margin: 0 auto;
@@ -64,19 +71,27 @@ body {
                     text-align: center;
                 }
 
-                h3 {
-                    margin-top: 50px;
-
-                    span {
-                        height: 22px;
-                        padding-left: 12px;
-
-                        &.heading-border-line-orange {
-                            border-left: 6px #FF5900 solid;
+                .contents-heading-h3 {
+                    &:nth-child(n+2) {
+                        h3 {
+                            margin-top: 56px;
                         }
+                    }
 
-                        &.heading-border-line-green {
-                            border-left: 6px #5CC427 solid;
+                    h3 {
+                        margin-top: 50px;
+
+                        span {
+                            height: 22px;
+                            padding-left: 12px;
+
+                            &.heading-border-line-orange {
+                                border-left: 6px #FF5900 solid;
+                            }
+
+                            &.heading-border-line-green {
+                                border-left: 6px #5CC427 solid;
+                            }
                         }
                     }
                 }
@@ -219,14 +234,88 @@ body {
                 }
 
                 .flex-insurance-thumbnail-type {
+                    margin: 0 48px;
+
                     .contents-insurance-thumbnail-type {
                         @include mq(pc) {
                             justify-content: center;
+                            box-sizing: border-box;
+                            padding-top: 10.4px;
                             width: 147.5px;
                             height: 147.5px;
                             margin-top: 17px;
                             background-color: #F5F5F5;
                             border-radius: 4px;
+                        }
+
+                        p {
+                            font-size: 18px;
+                            font-weight: bold;
+                            color: $mainPrimary;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+
+                .contents-insurance-compare {
+                    margin-top: 24.5px;
+
+                    .contents-heading-bg {
+                        background-image: url(../images/icon/icon-background-line.png);
+                        background-repeat: no-repeat;
+                        background-position: top 8.7px center;
+
+                        p {
+                            &.contents-heading-p {
+                                position: relative;
+
+                                span {
+                                    position: relative;
+                                    background-color: #fff;
+                                    padding: 0 27px;
+                                    font-size: 18px;
+                                    font-weight: bold;
+                                    z-index: 999;
+                                }
+                            }
+                        }
+                    }
+
+                    .contents-insurance {
+                        margin-top: 8.3px;
+
+                        .contents-insurance-compare-box {
+                            box-sizing: border-box;
+
+                            @include mq(pc) {
+                                width: 307px;
+                            }
+                        }
+                    }
+
+                    .contents-insurance-compare-left-box {
+                        color: #fff;
+                        padding: 13px 0 14px 0;
+                        border-radius: 4px 0 0 4px;
+                    }
+
+                    .contents-insurance-compare-right-box {
+                        color: #fff;
+                        padding: 13px 0 14px 0;
+                        border-radius: 0 4px 4px 0;
+                    }
+
+                    .contents-insurance-compare-left-box,
+                    .contents-insurance-compare-right-box {
+                        p {
+                            font-size: 18px;
+                            font-weight: 700;
+
+                            small {
+                                display: block;
+                                font-size: 12px;
+                                font-weight: 400;
+                            }
                         }
                     }
                 }
@@ -293,6 +382,13 @@ body {
 
 
     /******* flex *******/
+    .flex-2column {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
     .flex-2column-space-between {
         display: -webkit-flex;
         display: flex;
