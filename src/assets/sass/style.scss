@@ -233,30 +233,6 @@ body {
                     }
                 }
 
-                .flex-insurance-thumbnail-type {
-                    margin: 0 48px;
-
-                    .contents-insurance-thumbnail-type {
-                        @include mq(pc) {
-                            justify-content: center;
-                            box-sizing: border-box;
-                            padding-top: 10.4px;
-                            width: 147.5px;
-                            height: 147.5px;
-                            margin-top: 17px;
-                            background-color: #F5F5F5;
-                            border-radius: 4px;
-                        }
-
-                        p {
-                            font-size: 18px;
-                            font-weight: bold;
-                            color: $mainPrimary;
-                            margin-top: 5px;
-                        }
-                    }
-                }
-
                 .contents-insurance-compare {
                     margin-top: 24.5px;
 
@@ -318,6 +294,130 @@ body {
                             }
                         }
                     }
+
+                    .contents-insurance-compare-left-box-describe,
+                    .contents-insurance-compare-right-box-describe {
+                        position: relative;
+                        margin: 21.8px auto 0 auto;
+                        padding: 13.2px 10px 12.8px;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+
+                        @include mq(pc) {
+                            width: 299px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 700;
+                            letter-spacing: -0.02em;
+                        }
+                    }
+
+                    .contents-insurance-compare-left-box-describe {
+                        background-color: #FCEDE3;
+
+                        &::before {
+                            content: url(../images/icon/icon-triangle-left.png);
+                            position: absolute;
+                            top: 2px;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            -webkit-transform: translate(-50%, -50%);
+                            -ms-transform: translate(-50%, -50%);
+                        }
+                    }
+
+                    .contents-insurance-compare-right-box-describe {
+                        background-color: #E4F2DA;
+
+                        &::before {
+                            content: url(../images/icon/icon-triangle-right.png);
+                            position: absolute;
+                            top: 2px;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            -webkit-transform: translate(-50%, -50%);
+                            -ms-transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+            }
+
+
+            .contents-insurance-introduction {
+                padding: 56px 0;
+                background-color: #FFFFEC;
+
+                .contents-insurance-heading {
+                    h2 {
+                        margin-top: 12px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 400;
+                        margin-top: 24px;
+                    }
+                }
+
+                .contents-heading-h3 {
+                    h3 {
+                        margin-top: 49px!important;
+                    }
+                }
+
+                .contents-insurance-price {
+                    .contents-insurance-price-box {
+                        margin-top: 24.5px;
+                        border: 2px solid $mainPrimary;
+                        border-radius: 8px;
+                        box-sizing: border-box;
+
+                        &:nth-child(2) {
+                            margin-left: 24px;
+                        }
+
+                        .contents-insurance-price-box-head {
+                            border: 2px solid $mainPrimary;
+                            padding: 10px 0;
+
+                            p {
+                                color: #fff;
+                                font-size: 20px;
+                                font-weight: 600;
+
+                                small {
+                                    font-size: 15px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+
+                        .contents-insurance-price-box-body {
+                            padding: 20px 16px;
+                            .contents-insurance-price-box-subtitle {
+                                padding: 0;
+                            }
+
+                            .contents-insurance-price-box-left-text {
+                                font-size: 12px;
+                                font-weight: 600;
+                                width: 48px;
+                            }
+
+                            .contents-insurance-price-box-right-text {
+                                font-size: 36px;
+                                font-weight: 600;
+                                margin-left: 9px;
+
+                                small {
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -361,6 +461,35 @@ body {
         text-decoration: none;
     }
 
+    .text-reference {
+        color: #666666;
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: 24px;
+    }
+
+    .text-attention {
+        margin-top: 56px;
+        position: relative;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-right: 175px;
+        border: 2px solid $mainPrimary;
+        border-radius: 6px;
+
+        p {
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .img-attention {
+            position: absolute;
+            top: 20px;
+            right: 6px;
+            bottom: 0;
+        }
+    }
+
     /******* base *******/
     .align-left {
         text-align: left;
@@ -376,6 +505,10 @@ body {
 
     .font-bold {
         font-weight: bold;
+    }
+
+    .margin-top-fix {
+        margin-top: 6px;
     }
 
     /******* margin *******/
@@ -403,8 +536,46 @@ body {
         justify-content: space-around;
     }
 
+    .flex-insurance-thumbnail-type {
+        margin: 24px 48px 0;
+
+        .contents-insurance-thumbnail-type {
+            @include mq(pc) {
+                justify-content: center;
+                box-sizing: border-box;
+                width: 147.5px;
+                height: 147.5px;
+                margin-top: 17px;
+                background-color: #F5F5F5;
+                border-radius: 4px;
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: bold;
+                color: $mainPrimary;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .flex-insurance-thumbnail-type-sec {
+        .contents-insurance-thumbnail-type {
+            margin: 0 4px;
+            box-sizing: border-box;
+        }
+    }
+
     .contents-theme-bg-color-transparent {
         background-color: transparent;
+    }
+
+    .contents-theme-color-primary {
+        color: $mainPrimary;
+    }
+
+    .contents-theme-color-secondary {
+        color: $mainSecondary;
     }
 
     .contents-theme-bg-color-primary {
@@ -414,6 +585,7 @@ body {
     .contents-theme-bg-color-secondary {
         background-color: $mainSecondary;
     }
+    
 
 }
 
