@@ -13,6 +13,10 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+picture {
+  padding: 0;
+}
+
 /* Sections
    ========================================================================== */
 
@@ -262,6 +266,10 @@ progress {
 
 textarea {
   overflow: auto;
+}
+
+ul, ol {
+  list-style-type: none;
 }
 
 /**

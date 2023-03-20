@@ -65,6 +65,9 @@ body {
             }
 
             .contents-wrap {
+                font-size: 0;
+                position: relative;
+
                 @include mq(pc) {
                     width: 710px;
                     margin: 0 auto;
@@ -224,8 +227,10 @@ body {
             }
 
             .contents-insurance-qa {
+                position: relative;
                 background-color: #fff;
-                padding: 56px 0;
+                z-index: -10;
+                padding-top: 56px;
 
                 .contents-insurance-heading {
                     h2 {
@@ -346,8 +351,10 @@ body {
 
 
             .contents-insurance-introduction {
-                padding: 56px 0;
+                padding-top: 56px;
+                position: relative;
                 background-color: #FFFFEC;
+                z-index: -10;
 
                 .contents-insurance-heading {
                     h2 {
@@ -368,9 +375,18 @@ body {
                 }
 
                 .contents-insurance-price {
+                    position: relative;
+
+                    .contents-insurance-price-annotation-bottom {
+                        font-size: 12px;
+                        font-weight: 400;
+                        margin-top: 12px;
+                    }
+
                     .contents-insurance-price-box {
+                        width: 343px;
+                        background-color: #fff;
                         margin-top: 24.5px;
-                        border: 2px solid $mainPrimary;
                         border-radius: 8px;
                         box-sizing: border-box;
 
@@ -379,7 +395,6 @@ body {
                         }
 
                         .contents-insurance-price-box-head {
-                            border: 2px solid $mainPrimary;
                             padding: 10px 0;
 
                             p {
@@ -392,6 +407,14 @@ body {
                                     font-weight: 600;
                                 }
                             }
+                        }
+
+                        .contents-insurance-price-box-head-primary {
+                            border: 2px solid $mainPrimary;
+                        }
+
+                        .contents-insurance-price-box-head-secondary {
+                            border: 2px solid $mainSecondary;
                         }
 
                         .contents-insurance-price-box-body {
@@ -407,16 +430,73 @@ body {
                             }
 
                             .contents-insurance-price-box-right-text {
+                                position: relative;
                                 font-size: 36px;
                                 font-weight: 600;
                                 margin-left: 9px;
+                                z-index: 999;
 
                                 small {
                                     font-size: 14px;
                                     font-weight: 600;
                                 }
+
+                                &::after {
+                                    content: '';
+                                    width: 180px;
+                                    height: 12px;
+                                    display: inline-block;
+                                    z-index: -1;
+                                    background-color: #FFFFC2;
+                                    position: absolute;
+                                    bottom: -1px;
+                                    left: 0;
+                                }
+                            }
+
+                            .contents-insurance-price-annotation {
+                                font-size: 12px;
+                                font-weight: 700px;
+                                margin-top: 17px;
+                            }
+
+                            .contents-insurance-conditions {
+                                font-weight: 700;
+                                margin-top: 16px;
+                                color: #666666;
+
+                                p {
+                                    font-size: 12px;
+                                }
+
+                                dl {
+                                    text-align: justify;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    display: flex;
+                                    width: 100%;
+                                    column-gap: 0;
+
+                                    dt {
+                                        width: 20%;
+                                    }
+
+                                    dd {
+                                        width: 100%;
+                                        margin-left: 12px;
+                                        text-indent: -12px;
+                                    }
+                                }
                             }
                         }
+                    }
+
+                    .border-primary {
+                        border: 2px solid $mainPrimary;
+                    }
+
+                    .border-secondary {
+                        border: 2px solid $mainSecondary;
                     }
                 }
             }
@@ -469,25 +549,40 @@ body {
     }
 
     .text-attention {
-        margin-top: 56px;
-        position: relative;
+        position: absolute;
+        bottom: 56px;
         padding-top: 40px;
+        padding-left: 24px;
         padding-bottom: 40px;
         padding-right: 175px;
         border: 2px solid $mainPrimary;
         border-radius: 6px;
+        background-color: #fff;
+        z-index: -1;
 
         p {
             font-size: 21px;
             font-weight: 600;
+            line-height: 1.5;
         }
 
-        .img-attention {
-            position: absolute;
-            top: 20px;
-            right: 6px;
-            bottom: 0;
-        }
+        // .img-attention {
+        //     position: absolute;
+        //     top: 20px;
+        //     right: 6px;
+        //     bottom: 0;
+        // }
+    }
+
+    .img-attention {
+        z-index: 999;
+        margin-top: 78px;
+        margin-right: 10px;
+    }
+
+    .text-attention-second {
+        padding-top: 22px;
+        padding-bottom: 22px;
     }
 
     /******* base *******/
@@ -520,6 +615,7 @@ body {
         display: flex;
         -webkit-justify-content: center;
         justify-content: center;
+        align-items: center;
     }
 
     .flex-2column-space-between {
