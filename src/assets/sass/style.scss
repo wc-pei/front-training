@@ -500,6 +500,36 @@ body {
                     }
                 }
             }
+
+            .contents-suggest {
+                padding-top: 56px;
+                position: relative;
+                background-color: #fff;
+                z-index: -10;
+
+                .contents-suggest-heading {
+                    h2 {
+                        margin-top: 12px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 400;
+                        margin-top: 24px;
+                    }
+                }
+
+                .contents-heading-h3 {
+                    h3 {
+                        margin-top: 49px!important;
+                    }
+
+                    & + p {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+            }
         }
     }
 
@@ -604,6 +634,14 @@ body {
 
     .margin-top-fix {
         margin-top: 6px;
+    }
+
+    .margin-top-48 {
+        margin-top: 48px!important;
+    }
+
+    .margin-top-56 {
+        margin-top: 56px!important;
     }
 
     /******* margin *******/
