@@ -16,6 +16,7 @@ $breakpoint: (
 }
 
 body {
+    font-family: 'Hiragino Kaku Gothic Std';
     color: #333333;
     font-size: 14px;
     line-height: 1.75;
@@ -129,7 +130,7 @@ body {
                         span {
                             color: #fff;
                             font-size: 18px;
-                            font-weight: bold;
+                            font-weight: 700;
                             position: relative;
 
                             &::before {
@@ -160,7 +161,7 @@ body {
                         text-decoration: none;
                         margin: auto;
                         padding: 14px 0 16px 0;
-                        font-weight: bold;
+                        font-weight: 700;
                         border: 1px solid #fff;
                         border-radius: 4px;
                         transition: 0.5s;
@@ -186,6 +187,7 @@ body {
 
                             small {
                                 font-size: 10px;
+                                font-weight: 400;
                             }
                         }
                     }
@@ -277,7 +279,7 @@ body {
                         text-decoration: none;
                         margin: auto;
                         padding: 14px 0 16px 0;
-                        font-weight: bold;
+                        font-weight: 700;
                         border: 1px solid #fff;
                         border-radius: 4px;
                         transition: 0.5s;
@@ -303,6 +305,7 @@ body {
 
                             small {
                                 font-size: 10px;
+                                font-weight: 400;
                             }
                         }
                     }
