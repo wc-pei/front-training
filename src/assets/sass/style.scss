@@ -19,7 +19,14 @@ body {
     font-family: 'Hiragino Kaku Gothic Std';
     color: #333333;
     font-size: 14px;
-    line-height: 1.75;
+
+    @include mq(pc) {
+        line-height: 1.75;
+    }
+
+    @include mq(sp) {
+        line-height: 1.15;
+    }
 
     header {
         @include mq(pc) {
@@ -27,19 +34,50 @@ body {
             margin: 0 auto;
         }
 
+        @include mq(sp) {
+            padding: 0 12px;
+        }
+
         .top-logo-area {
             width: 960px;
             margin: 0 auto;
+
+            @include mq(sp) {
+                width: 100%;
+                padding-top: 12px;
+
+                img {
+                    max-width: 168px;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 400;
+
+                @include mq(sp) {
+                    font-size: 10px;
+                    text-align: right;
+                    line-height: 1.4;
+                }
+            }
         }
     }
 
     main {
         &.container {
+            width: 100%;
+
             .top-main-visual {
                 background-color: #FFFFEC;
 
                 @include mq(pc) {
                     max-height: 396px;
+                }
+
+                @include mq(sp) {
+                    font-size: 0;
+                    margin-top: 13.5px;
                 }
 
                 .top-main-visual-wrap {
@@ -48,17 +86,60 @@ body {
                         margin: 0 auto;
                     }
 
+                    @include mq(sp) {
+                        display: block;
+                        width: 100%;
+                    }
+
                     .top-left-column {
                         margin-left: 160px;
                         z-index: 999;
+                        position: relative;
+
+                        @include mq(sp) {
+                            width: 100%;
+                            margin: 0;
+
+                            .top-left-first-elem {
+                                text-align: center;
+
+                                img {
+                                    width: 327.5px;
+                                    max-width: 100%;
+                                }
+                            }
+                        }
 
                         .top-left-second-elem {
                             margin-top: 48px;
+
+                            @include mq(sp) {
+                                position: absolute;
+                                right: 12px;
+                                bottom: -215px;
+
+                                img {
+                                    width: 302px;
+                                    max-width: 100%;
+                                }
+                            }
                         }
                     }
 
                     .top-right-column {
-                        margin-left: -160px;
+                        @include mq(pc) {
+                            margin-left: -160px;
+                        }
+
+                        img {
+                            width: 100%!important;
+
+                            @include mq(sp) {
+                                width: 375px;
+                                max-width: 100%;
+                            }
+                        }
+
                     }
                 }
             }
@@ -72,17 +153,25 @@ body {
                 color: #333333;
                 font-size: 0;
                 position: relative;
+                text-align: center;
 
                 @include mq(pc) {
                     width: 710px;
                     margin: 0 auto;
-                    text-align: center;
+                }
+
+                @include mq(sp) {
+                    padding: 0 16px;
                 }
 
                 .contents-heading-h3 {
                     &:nth-child(n+2) {
                         h3 {
                             margin-top: 56px;
+
+                            @include mq(sp) {
+                                margin-top: 40px;
+                            }
                         }
                     }
 
@@ -133,16 +222,31 @@ body {
                             font-weight: 700;
                             position: relative;
 
+                            @include mq(sp) {
+                                font-size: 16px;
+                                line-height: 1.69;
+                            }
+
                             &::before {
                                 content: url(../images/icon/icon-slash_back.png);
                                 position: absolute;
                                 left: -42.9px;
+
+                                @include mq(sp) {
+                                    top: -2px;
+                                    left: -27px;
+                                }
                             }
 
                             &::after {
                                 content: url(../images/icon/icon-slash.png);
                                 position: absolute;
                                 right: -42.9px;
+
+                                @include mq(sp) {
+                                    top: -2px;
+                                    right: -27px;
+                                }
                             }
                         }
                     }
@@ -154,6 +258,12 @@ body {
 
                         @include mq(pc) {
                             width: 710px;
+                        }
+
+                        @include mq(sp) {
+                            max-width: 100%;
+                            width: 327px;
+                            height: 72px;
                         }
 
                         display: block;
@@ -458,15 +568,32 @@ body {
                 padding: 31px 0 32px;
 
                 .contents-insurance-thumbnail-property {
+                    margin-top: 17px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 112px;
+                    height: 56px;
+                    background-color: #fff;
+                    border-radius: 4px;
+
                     @include mq(pc) {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 112px;
-                        height: 56px;
-                        margin-top: 17px;
-                        background-color: #fff;
-                        border-radius: 4px;
+                        margin-top: 21.7px;
+                    }
+
+                    @include mq(sp) {
+                        width: 96px;
+                        height: 48px;
+                        margin-top: 20.2px;
+                        margin-left: 8px;
+
+                        img {
+                            max-width: 82px;
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        margin-left: 0;
                     }
                 }
             }
@@ -478,10 +605,12 @@ body {
                 z-index: -10;
                 padding-top: 56px;
 
+                @include mq(sp) {
+                    padding-top: 48px;
+                }
+
                 p {
-                    @include mq(pc) {
-                        line-height: 1.75;
-                    }
+                    line-height: 1.75;
                 }
 
                 .contents-insurance-heading {
@@ -645,6 +774,10 @@ body {
 
                         &:nth-child(2) {
                             margin-left: 24px;
+
+                            @include mq(sp) {
+                                margin-left: 0;
+                            }
                         }
 
                         .contents-insurance-price-box-head {
@@ -826,14 +959,19 @@ body {
 
     h2 {
         font-size: 28px;
-        font-weight: bold;
+        font-weight: 700;
         margin: 0;
         line-height: 1.15;
+
+        @include mq(sp) {
+            font-size: 24px;
+            line-height: 1.5;
+        }
     }
 
     h3 {
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 700;
         margin: 0;
         line-height: 1.15;
     }
@@ -992,10 +1130,22 @@ body {
     }
 
     .flex-2column-space-between {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
+        @include mq(pc) {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+    }
+
+    .sp-layout-block {
+        @include mq(sp) {
+            display: block;
+        }
+
+        .contents-insurance-price-box {
+            width: 100%!important;
+        }
     }
 
     .flex-2column-space-around {
@@ -1047,6 +1197,17 @@ body {
         .contents-insurance-thumbnail-type {
             margin: 0 4px;
             box-sizing: border-box;
+        }
+    }
+
+    .sp-flex-overflow {
+        @include mq(sp) {
+            display: flex;
+            overflow-x: scroll;
+
+            div {
+                flex-shrink: 0;
+            }
         }
     }
 
