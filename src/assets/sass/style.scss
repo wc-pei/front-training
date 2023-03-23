@@ -81,10 +81,11 @@ body {
                 }
 
                 .top-main-visual-wrap {
-                    @include mq(pc) {
-                        width: 1280px;
+                    //@include mq(pc) {
+                        width: 100%;
+                        max-width: 1280px;
                         margin: 0 auto;
-                    }
+                    //}
 
                     @include mq(sp) {
                         display: block;
@@ -104,8 +105,8 @@ body {
                                 text-align: center;
 
                                 img {
-                                    width: 327.5px;
-                                    max-width: 100%;
+                                    max-width: 327.5px;
+                                    width: 100%;
                                 }
                             }
                         }
@@ -177,18 +178,14 @@ body {
 
                     h3 {
                         margin-top: 50px;
+                        padding-left: 12px;
 
-                        span {
-                            height: 22px;
-                            padding-left: 12px;
+                        &.heading-border-line-orange {
+                            border-left: 6px #FF5900 solid;
+                        }
 
-                            &.heading-border-line-orange {
-                                border-left: 6px #FF5900 solid;
-                            }
-
-                            &.heading-border-line-green {
-                                border-left: 6px #5CC427 solid;
-                            }
+                        &.heading-border-line-green {
+                            border-left: 6px #5CC427 solid;
                         }
                     }
                 }
@@ -303,6 +300,8 @@ body {
                     }
 
                     &.style-a {
+                        border: 1px solid $mainPrimary;
+
                         a {
                             p {
                                 span {
@@ -369,6 +368,11 @@ body {
                     font-weight: 700;
                     color: $mainPrimary;
                     margin-top: 16px!important;
+
+                    @include mq(sp) {
+                        font-size: 24px;
+                        line-height: 1.29;
+                    }
 
                     & + p {
                         font-size: 16px;
@@ -531,25 +535,49 @@ body {
                 color: #666666;
                 font-size: 12px;
                 margin: 56px 0;
+                max-width: 960px;
+
+                @include mq(sp) {
+                    margin-top: 24px;
+                }
 
                 .contents-wrap {
-                    width: 960px;
                     font-size: 12px;
+
+                    @include mq(pc) {
+                        //max-width: 960px;
+                    }
+
+                    @include mq(sp) {
+                        width: 100%;
+                        padding: 0!important;
+                    }
                 }
 
                 .contents-sitemap-title {
                     font-size: 12px;
                     font-weight: bold;
+
+                    @include mq(sp) {
+                        margin-left: 12px;
+                        margin-top: 24px;
+                    }
                 }
 
                 ul {
                     list-style-type: disc;
-                    padding-left: 1.5em;
+
+                    @include mq(pc) {
+                        padding-left: 1.5em;
+                    }
+
+                    @include mq(sp) {
+                        margin-top: 8px;
+                        padding: 0 16px 0 30px;
+                    }
 
                     li {
-                        @include mq(pc) {
-                            line-height: 1.6666666666666667;
-                        }
+                        line-height: 1.6666666666666667;
 
                         a {
                             color: #0080B9;
@@ -625,7 +653,13 @@ body {
                     .contents-heading-bg {
                         background-image: url(../images/icon/icon-background-line.png);
                         background-repeat: no-repeat;
-                        background-position: top 8.7px center;
+                        background-position: top 14.7px center;
+
+                        @include mq(sp) {
+                            background-image: url(../images/icon/icon-background-line-sp.png);
+                            background-size: contain;
+                            width: 100%;
+                        }
 
                         p {
                             &.contents-heading-p {
@@ -638,6 +672,10 @@ body {
                                     font-size: 18px;
                                     font-weight: bold;
                                     z-index: 999;
+
+                                    @include mq(sp) {
+                                        padding: 0 11px;
+                                    }
                                 }
                             }
                         }
@@ -646,11 +684,30 @@ body {
                     .contents-insurance {
                         margin-top: 8.3px;
 
+                        @include mq(sp) {
+                            margin-top: 0;
+                        }
+
                         .contents-insurance-compare-box {
                             box-sizing: border-box;
 
                             @include mq(pc) {
-                                width: 307px;
+                                max-width: 307px;
+                                width: 100%;
+                            }
+
+                            @include mq(sp) {
+                                width: 100%;
+                            }
+
+                            p {
+                                @include mq(sp) {
+                                    font-size: 16px;
+
+                                    small {
+                                        font-size: 10px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -659,12 +716,20 @@ body {
                         color: #fff;
                         padding: 13px 0 14px 0;
                         border-radius: 4px 0 0 4px;
+
+                        @include mq(sp) {
+                            padding: 7px 0 7px;
+                        }
                     }
 
                     .contents-insurance-compare-right-box {
                         color: #fff;
-                        padding: 13px 0 14px 0;
+                        padding: 13px 0 14px;
                         border-radius: 0 4px 4px 0;
+
+                        @include mq(sp) {
+                            padding: 7px 0 7px;
+                        }
                     }
 
                     .contents-insurance-compare-left-box,
@@ -689,14 +754,27 @@ body {
                         border-radius: 4px;
                         box-sizing: border-box;
 
-                        @include mq(pc) {
-                            width: 299px;
+                        //@include mq(pc) {
+                            max-width: 299px;
+                            width: 100%;
+                        //}
+
+                        @include mq(sp) {
+                            margin-top: 15.5px;
+                            padding: 10px;
+                            width: 95%;
                         }
 
                         p {
-                            font-size: 14px;
+                            font-size: 14px!important;
                             font-weight: 700;
                             letter-spacing: -0.02em;
+
+                            @include mq(sp) {
+                                font-size: 12px!important;
+                                line-height: 1.5;
+                                text-align: left;
+                            }
                         }
                     }
 
@@ -740,18 +818,30 @@ body {
                 .contents-insurance-heading {
                     h2 {
                         margin-top: 12px;
+
+                        @include mq(sp) {
+                            line-height: 1.5;
+                        }
                     }
 
                     p {
                         font-size: 15px;
                         font-weight: 400;
                         margin-top: 24px;
+
+                        @include mq(sp) {
+                            line-height: 1.75;
+                        }
                     }
                 }
 
                 .contents-heading-h3 {
                     h3 {
                         margin-top: 49px!important;
+
+                        @include mq(sp) {
+                            font-size: 20px;
+                        }
                     }
                 }
 
@@ -881,6 +971,10 @@ body {
                 background-color: #fff;
                 z-index: -10;
 
+                @include mq(sp) {
+                    padding-top: 48px;
+                }
+
                 p {
                     @include mq(pc) {
                         line-height: 1.75;
@@ -896,6 +990,12 @@ body {
                         font-size: 15px;
                         font-weight: 400;
                         margin-top: 24px;
+
+                        @include mq(sp) {
+                            font-size: 16px;
+                            line-height: 1.75;
+                            margin-top: 20px;
+                        }
                     }
                 }
 
@@ -907,6 +1007,17 @@ body {
                     & + p {
                         font-size: 16px;
                         font-weight: 400;
+                    }
+                }
+
+                .contents-suggest-img {
+                    img {
+                        border-radius: 4px;
+
+                        @include mq(sp) {
+                            width: 100%;
+                            max-width: 222px;
+                        }
                     }
                 }
             }
@@ -974,6 +1085,10 @@ body {
         font-weight: 700;
         margin: 0;
         line-height: 1.15;
+
+        @include mq(sp) {
+            line-height: 1.5;
+        }
     }
 
     h4 {
@@ -1001,38 +1116,52 @@ body {
         font-size: 12px;
         font-weight: 400;
         margin-top: 24px;
+        text-align: right;
+
+        @include mq(sp) {
+            text-align: left;
+            margin-top: 16px;
+        }
     }
 
     .text-attention {
         position: absolute;
         bottom: 56px;
-        padding-top: 40px;
-        padding-left: 24px;
-        padding-bottom: 40px;
-        padding-right: 175px;
+        padding: 40px 175px 40px 24px;
         border: 2px solid $mainPrimary;
         border-radius: 6px;
         background-color: #fff;
         z-index: -1;
 
-        p {
-            font-size: 21px!important;
-            font-weight: 600!important;
-            line-height: 1.71!important;
+        @include mq(sp) {
+            position: relative;
+            margin-top: 48px;
+            padding: 16px 14px 21px;
+            bottom: 0;
         }
 
-        // .img-attention {
-        //     position: absolute;
-        //     top: 20px;
-        //     right: 6px;
-        //     bottom: 0;
-        // }
+        p {
+            font-size: 21px;
+            font-weight: 600;
+            line-height: 1.71;
+
+            @include mq(sp) {
+                font-size: 19px;
+                text-align: left;
+                line-height: 1.89!important;
+                letter-spacing: -0.9px;
+            }
+        }
     }
 
     .img-attention {
         z-index: 999;
         margin-top: 78px;
         margin-right: 10px;
+
+        @include mq(sp) {
+            margin-top: -48px;
+        }
     }
 
     .text-attention-second {
@@ -1117,6 +1246,10 @@ body {
         margin-top: 56px!important;
     }
 
+    .sp-margin-top-40 {
+        margin-top: 40px!important;
+    }
+
     /******* margin *******/
 
 
@@ -1129,7 +1262,24 @@ body {
         align-items: center;
     }
 
+    .sp-space-between {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+
     .flex-2column-space-between {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+
+        @include mq(sp) {
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+    }
+
+    .flex-2column-space-between-block {
         @include mq(pc) {
             display: -webkit-flex;
             display: flex;
@@ -1156,7 +1306,7 @@ body {
     }
 
     .flex-3column {
-        width: 100%;
+        //width: 100%;
         display: -webkit-flex;
         display: flex;
         -webkit-flex-wrap: wrap;
@@ -1164,24 +1314,50 @@ body {
         -webkit-justify-content: space-between;
         justify-content: space-between;
 
+        @include mq(sp) {
+            display: block;
+            flex-wrap: wrap;
+        }
+
         li {
-            width: 33.33333%;
-            white-space: nowrap;
+            @include mq(pc) {
+                width: 33.33333%;
+                white-space: nowrap;
+            }
         }
     }
 
     .flex-insurance-thumbnail-type {
-        margin: 24px 48px 0;
+        @include mq(pc) {
+            margin: 24px 48px 0;
+        }
+
+        @include mq(sp) {
+            margin: 24px 39.5px 0;
+        }
 
         .contents-insurance-thumbnail-type {
+            background-color: #F5F5F5;
+            border-radius: 4px;
+
             @include mq(pc) {
                 justify-content: center;
                 box-sizing: border-box;
                 width: 147.5px;
                 height: 147.5px;
                 margin-top: 17px;
-                background-color: #F5F5F5;
-                border-radius: 4px;
+            }
+
+            @include mq(sp) {
+                width: 128px;
+                height: 128px;
+                
+                &:nth-child(n+3) {
+                    margin-top: 8px;
+                }
+            }
+
+            img {
             }
 
             p {
@@ -1194,9 +1370,25 @@ body {
     }
 
     .flex-insurance-thumbnail-type-sec {
+        margin: 31px 0 0 0;
+
         .contents-insurance-thumbnail-type {
             margin: 0 4px;
             box-sizing: border-box;
+
+            @include mq(sp) {
+                width: 100%;
+                max-width: 109px;
+                margin: 0;
+            }
+        }
+
+        @include mq(sp) {
+            .contents-insurance-thumbnail-type {
+                &:nth-child(n+3) {
+                    margin-top: 0;
+                }
+            }
         }
     }
 
@@ -1204,6 +1396,7 @@ body {
         @include mq(sp) {
             display: flex;
             overflow-x: scroll;
+            flex-wrap: nowrap;
 
             div {
                 flex-shrink: 0;
@@ -1257,6 +1450,18 @@ body {
     @include mq(pc) {
         display: none;
     }
+}
+
+.sp-text-indent {
+    @include mq(sp) {
+       text-indent: 36px;
+    }
+}
+
+.sp-text-black {
+    @include mq(sp) {
+        color: #333333;
+     }
 }
 
 // h1 {
