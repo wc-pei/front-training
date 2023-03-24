@@ -1464,6 +1464,17 @@ body {
      }
 }
 
+#js-top-scroll {
+    display: none;
+    position: fixed;
+    right: 48px;
+    bottom: 70px;
+}
+
+.js-show {
+    display: block!important;
+}
+
 // h1 {
 //     @include mq(pc) {
 //         font-size: 20px;
