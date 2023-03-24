@@ -5,8 +5,9 @@ $mainTertiary: #EBEBEB;
 
 
 $breakpoint: (
-    sp: 'screen and (max-width:767px)',
-    pc: 'screen and (min-width: 768px)'
+    sp: 'screen and (max-width: 767px)',
+    pc: 'screen and (min-width: 768px)',
+    minisp: 'screen and (max-width: 370px)'
 );
 
 @mixin mq($bp) {
@@ -1338,31 +1339,35 @@ body {
         }
 
         @include mq(sp) {
-            margin: 24px 39.5px 0;
+            margin: 16px 0 0;
+            padding: 0 39.5px;
+        }
+
+        @include mq(minisp) {
+            padding: 0;
         }
 
         .contents-insurance-thumbnail-type {
             background-color: #F5F5F5;
             border-radius: 4px;
+            justify-content: center;
 
             @include mq(pc) {
-                justify-content: center;
-                box-sizing: border-box;
                 width: 147.5px;
                 height: 147.5px;
+                box-sizing: border-box;
                 margin-top: 17px;
             }
 
             @include mq(sp) {
                 width: 128px;
                 height: 128px;
-                
-                &:nth-child(n+3) {
-                    margin-top: 8px;
-                }
+                margin-top: 8px;
+                flex-wrap: wrap;
             }
 
-            img {
+            @include mq(minisp) {
+                margin: 5px auto 0;
             }
 
             p {
@@ -1376,6 +1381,11 @@ body {
 
     .flex-insurance-thumbnail-type-sec {
         margin: 31px 0 0 0;
+        padding: 0;
+
+        @include mq(minisp) {
+            display: block;
+        }
 
         .contents-insurance-thumbnail-type {
             margin: 0 4px;
@@ -1386,14 +1396,18 @@ body {
                 max-width: 109px;
                 margin: 0;
             }
+
+            @include mq(minisp) {
+                margin: 5px auto 0;
+            }
         }
 
         @include mq(sp) {
-            .contents-insurance-thumbnail-type {
-                &:nth-child(n+3) {
-                    margin-top: 0;
-                }
-            }
+            // .contents-insurance-thumbnail-type {
+            //     &:nth-child(n+3) {
+            //         margin-top: 0;
+            //     }
+            // }
         }
     }
 
@@ -1476,14 +1490,19 @@ body {
     font-size: 14px;
 
     p {
-        padding: 32px 0;
+        padding: 32px 0 0 0;
     }
 
     @include mq(pc) {
         display: none;
         position: fixed;
         right: 48px;
-        bottom: 70px;
+        bottom: 75px;
+
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
     }
 
     @include mq(sp) {
