@@ -534,14 +534,16 @@ body {
             .contents-sitemap {
                 color: #666666;
                 font-size: 12px;
-                margin: 56px 0;
-                max-width: 960px;
+                margin: 56px auto;
+                width: 960px;
 
                 @include mq(sp) {
+                    width: 100%;
                     margin-top: 24px;
                 }
 
                 .contents-wrap {
+                    width: auto;
                     font-size: 12px;
 
                     @include mq(pc) {
