@@ -16,7 +16,7 @@ $breakpoint: (
 }
 
 body {
-    font-family: 'Hiragino Kaku Gothic Std';
+    font-family: 'Hiragino Kaku Gothic Std', 'Noto Sans CJK JP', 'メイリオ', sans-serif;
     color: #333333;
     font-size: 14px;
 
@@ -69,6 +69,7 @@ body {
             width: 100%;
 
             .top-main-visual {
+                border-top: 2px solid #DCDCDC;
                 background-color: #FFFFEC;
 
                 @include mq(pc) {
@@ -532,6 +533,7 @@ body {
             }
 
             .contents-sitemap {
+                font-family: 'Noto Sans CJK JP', 'メイリオ', sans-serif;
                 color: #666666;
                 font-size: 12px;
                 margin: 56px auto;
@@ -561,7 +563,7 @@ body {
                     font-weight: bold;
 
                     @include mq(sp) {
-                        margin-left: 12px;
+                        margin-left: 16px;
                         margin-top: 24px;
                     }
                 }
@@ -575,7 +577,7 @@ body {
 
                     @include mq(sp) {
                         margin-top: 8px;
-                        padding: 0 16px 0 30px;
+                        padding: 0 16px 0 35px;
                     }
 
                     li {
@@ -898,6 +900,7 @@ body {
                         .contents-insurance-price-box-body {
                             padding: 20px 16px;
                             .contents-insurance-price-box-subtitle {
+                                font-family: 'Hiragino Kaku Gothic ProN';
                                 padding: 0;
                             }
 
@@ -1064,10 +1067,10 @@ body {
             font-size: 10px;
             margin-top: 16.5px;
         }
+    }
 
-        hr {
-            border-top: 1px solid #DCDCDC;
-        }
+    hr {
+        border-top: 1px solid #DCDCDC;
     }
 
     h2 {
@@ -1440,7 +1443,7 @@ body {
     }
 
     @include mq(sp) {
-        display: none;
+        display: none!important;
     }
 }
 
@@ -1450,7 +1453,7 @@ body {
     }
 
     @include mq(pc) {
-        display: none;
+        display: none!important;
     }
 }
 
@@ -1467,10 +1470,34 @@ body {
 }
 
 #js-top-scroll {
-    display: none;
-    position: fixed;
-    right: 48px;
-    bottom: 70px;
+    color: #0080B9;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+
+    p {
+        padding: 32px 0;
+    }
+
+    @include mq(pc) {
+        display: none;
+        position: fixed;
+        right: 48px;
+        bottom: 70px;
+    }
+
+    @include mq(sp) {
+        .flex-2column {
+            p + p {
+                margin-left: 14px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .js-show {
