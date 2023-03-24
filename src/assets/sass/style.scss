@@ -448,11 +448,18 @@ body {
                 }
 
                 .contents-phase-card {
+                    align-items: center;
                     position: relative;
                     background-color: #fff;
                     border-radius: 8px;
-                    padding: 22.5px 25px 25.5px 24px;
+                    padding: 18.5px 16px 18.5px;
                     margin-top: 28.5px;
+
+                    @include mq(sp) {
+                        -webkit-flex-wrap: nowrap;
+                        flex-wrap: nowrap;
+                        padding: 16px;
+                    }
 
                     p {
                         span {
@@ -507,11 +514,24 @@ body {
                     .contents-phase-card-estimate-describe {
                         font-size: 14px;
                         font-weight: 400;
+                        text-align: left;
                         margin-top: 34px;
+
+                        @include mq(sp) {
+                            width: 50%;
+                            text-align: justify;
+                            line-height: 1.75;
+                            margin-top: 15px;
+                            letter-spacing: -0.6px;
+                        }
                     }
 
                     .contents-phase-img {
-                        margin-left: 22px;
+                        margin-left: 20px;
+
+                        @include mq(sp) {
+                            margin-left: 0;
+                        }
                     }
 
                     &::after {
@@ -529,6 +549,11 @@ body {
 
                     & + .contents-phase-card {
                         margin-top: 27.5px;
+                    }
+
+                    .contents-phase-style {
+                        flex-wrap: nowrap;
+                        align-items: center;
                     }
                 }
             }
