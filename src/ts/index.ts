@@ -11,5 +11,5 @@ topBtn.addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
     const scrollPosition = window.pageYOffset;
-    scrollPosition > 1400 ? topBtn.classList.add("js-show") : topBtn.classList.remove("js-show");
+    scrollPosition > 1550 ? topBtn.classList.add("js-show") : topBtn.classList.remove("js-show");
 });

@@ -41,7 +41,11 @@ body {
 
         .top-logo-area {
             width: 960px;
-            margin: 0 auto;
+            margin: 17px auto;
+
+            > div {
+                line-height: 0;
+            }
 
             @include mq(sp) {
                 width: 100%;
@@ -1058,7 +1062,7 @@ body {
     footer {
         font-size: 12px;
         background-color: #fff;
-        padding: 16.5px 0;
+        padding: 0;
 
         @include mq(pc) {
             width: 100%;
@@ -1069,7 +1073,16 @@ body {
             position: relative;
             font-size: 12px;
             font-weight: 400;
-            margin-bottom: 14px;
+            padding-top: 16.5px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #DCDCDC;
+
+            @include mq(sp) {
+                padding-top: 12px;
+                padding-bottom: 11px;
+            }
+
+
 
             a {
                 color: #333333;
@@ -1085,13 +1098,14 @@ body {
                     width: 12px;
                     height: 11px;
                     right: -16px;
+                    bottom: 1px;
                 }
             }
         }
 
         .copyright {
             font-size: 10px;
-            margin-top: 16.5px;
+            margin: 16.5px 0;
         }
     }
 
@@ -1303,6 +1317,7 @@ body {
         display: flex;
         -webkit-justify-content: space-between;
         justify-content: space-between;
+        align-items: center;
 
         @include mq(sp) {
             -webkit-flex-wrap: wrap;
@@ -1515,7 +1530,7 @@ body {
     font-size: 14px;
 
     p {
-        padding: 32px 0 0 0;
+        padding: 32px 0 30px;
     }
 
     @include mq(pc) {
@@ -1531,6 +1546,8 @@ body {
     }
 
     @include mq(sp) {
+        border-bottom: 2px solid #DCDCDC;
+
         .flex-2column {
             p + p {
                 margin-left: 14px;
