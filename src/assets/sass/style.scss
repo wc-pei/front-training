@@ -7,7 +7,8 @@ $mainTertiary: #EBEBEB;
 $breakpoint: (
     sp: 'screen and (max-width: 767px)',
     pc: 'screen and (min-width: 768px)',
-    minisp: 'screen and (max-width: 370px)'
+    minisp: 'screen and (max-width: 370px)',
+    minipc: 'screen and (max-width: 1006px)'
 );
 
 @mixin mq($bp) {
@@ -49,7 +50,7 @@ body {
 
             @include mq(sp) {
                 width: 100%;
-                padding-top: 12px;
+                //padding-top: 12px;
 
                 img {
                     max-width: 168px;
@@ -563,11 +564,12 @@ body {
             }
 
             .contents-sitemap {
-                font-family: 'Noto Sans CJK JP', 'メイリオ', sans-serif;
+                font-family: sans-serif;
                 color: #666666;
                 font-size: 12px;
                 margin: 56px auto;
-                width: 960px;
+                width: 100%;
+                max-width: 960px;
 
                 @include mq(sp) {
                     width: 100%;
@@ -583,8 +585,9 @@ body {
                     }
 
                     @include mq(sp) {
-                        width: 100%;
+                        width: 90%;
                         padding: 0!important;
+                        margin: 0 10px 0 auto;
                     }
                 }
 
@@ -593,12 +596,19 @@ body {
                     font-weight: bold;
 
                     @include mq(sp) {
-                        margin-left: 16px;
+                        margin-left: -14px;
                         margin-top: 24px;
                     }
                 }
 
+                .contents-sitemap-subtitle {
+                    @include mq(sp) {
+                        margin-left: -14px;
+                    }
+                }
+
                 ul {
+                    width: 100%;
                     list-style-type: disc;
 
                     @include mq(pc) {
@@ -607,11 +617,16 @@ body {
 
                     @include mq(sp) {
                         margin-top: 8px;
-                        padding: 0 16px 0 35px;
+                    //    padding: 0 16px 0 35px;
                     }
 
                     li {
                         line-height: 1.6666666666666667;
+                    //    padding-left: 1.5em;
+
+                        @include mq(sp) {
+                      //      padding: 0 16px 0 35px;
+                        }
 
                         a {
                             color: #0080B9;
